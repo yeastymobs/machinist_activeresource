@@ -8,7 +8,7 @@ begin
     gem.summary = %Q{ActiveResource Adapter for Machinist}
     gem.description = %Q{ActiveResource Adapter for Machinist}
     gem.email = "mathieu.fosse@gmail.com"
-    gem.homepage = "http://github.com/pointcom/machinist_activeresource"
+    gem.homepage = "http://github.com/yeastymobs/machinist_activeresource"
     gem.authors = ["Mathieu Fosse"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
