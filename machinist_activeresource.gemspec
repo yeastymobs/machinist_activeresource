@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{machinist_activeresource}
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mathieu Fosse"]
@@ -24,11 +24,12 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/machinist_activeresource.rb",
+     "machinist_activeresource.gemspec",
      "spec/machinist_activeresource_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/pointcom/machinist_activeresource}
+  s.homepage = %q{http://github.com/yeastymobs/machinist_activeresource}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
