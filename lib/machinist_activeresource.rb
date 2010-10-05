@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'machinist'
 require 'machinist/blueprints'
 require 'active_resource'
