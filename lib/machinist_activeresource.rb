@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'machinist'
 require 'machinist/blueprints'
 require 'active_resource'
@@ -7,13 +8,13 @@ module Machinist
   class ActiveResourceAdapter
     
     def self.has_association?(object, attribute)
-      object.class.reflect_on_association(attribute)
+      false 
     end
     
-    def self.class_for_association(object, attribute)
-      association = object.class.reflect_on_association(attribute)
-      association && association.klass
-    end
+    #def self.class_for_association(object, attribute)
+      #association = object.class.reflect_on_association(attribute)
+      #association && association.klass
+    #end
     
     # This method takes care of converting any associated objects,
     # in the hash returned by Lathe#assigned_attributes, into their
@@ -31,12 +32,7 @@ module Machinist
     def self.assigned_attributes_without_associations(lathe)
       attributes = {}
       lathe.assigned_attributes.each_pair do |attribute, value|
-        association = lathe.object.class.reflect_on_association(attribute)
-        if association && association.macro == :belongs_to && !value.nil?
-          attributes[association.primary_key_name.to_sym] = value.id
-        else
-          attributes[attribute] = value
-        end
+        attributes[attribute] = value
       end
       attributes
     end
@@ -51,10 +47,11 @@ module Machinist
     module ClassMethods
       def make(*args, &block)
         lathe = Lathe.run(Machinist::ActiveResourceAdapter, self.new, *args)
-        unless Machinist.nerfed?
-          lathe.object.save!
-          lathe.object.reload
-        end
+        # What is Nerfed ?
+        #unless Machinist.nerfed?
+          #lathe.object.save!
+          #lathe.object.reload
+        #end
         lathe.object(&block)
       end
 
