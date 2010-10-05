@@ -7,3 +7,8 @@ require 'spec/autorun'
 Spec::Runner.configure do |config|
   
 end
+
+
+class Application < ActiveResource::Base
+  self.site = 'http://test.local'
+end
